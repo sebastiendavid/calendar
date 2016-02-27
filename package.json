@@ -1,0 +1,79 @@
+{
+  "name": "calendar",
+  "version": "0.0.1",
+  "description": "A calendar",
+  "main": "build/bundle.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "bundle": "npm run clean && NODE_ENV=production node_modules/.bin/webpack --progress --colors -p",
+    "clean": "node_modules/.bin/trash ./build",
+    "lint": "node_modules/.bin/eslint ./",
+    "prod": "NODE_ENV=production node_modules/.bin/webpack-dev-server --progress --colors -p",
+    "start": "node_modules/.bin/webpack-dev-server --inline --hot --progress --colors -d",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sébastien David <sebastien-david@outlook.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.1.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.9.0",
+    "moment": "^2.11.2",
+    "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.1",
+    "react": "^0.14.7",
+    "react-addons-perf": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1",
+    "redux-devtools": "^3.1.1",
+    "redux-devtools-dock-monitor": "^1.1.0",
+    "redux-devtools-log-monitor": "^1.0.4",
+    "redux-slider-monitor": "^1.0.2",
+    "redux-thunk": "^1.0.3",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ],
+    "ignore": [
+      "node_modules"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "mocha": true
+    },
+    "rules": {
+      "comma-dangle": [
+        2,
+        "never"
+      ],
+      "max-len": [
+        2,
+        120,
+        2
+      ],
+      "no-console": 0
+    }
+  }
+}
