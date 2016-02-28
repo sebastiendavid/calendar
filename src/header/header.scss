@@ -1,16 +1,39 @@
-.Header {
+.Header__info {
   display: flex;
   font-size: 2rem;
   padding: 1rem;
   align-items: center;
+
+  .Time {
+    flex-grow: 1;
+    text-align: right;
+    justify-content: flex-end;
+  }
+
+  .material-icons {
+    font-size: 2rem !important;
+  }
 }
 
 .Header__date {
-  flex-grow: 2;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
 }
 
-.Time {
-  display: inline-block;
-  flex-grow: 1;
-  text-align: right;
+.Header__today {
+  padding-left: 0.5rem;
+}
+
+.Header__navbar {
+  display: flex;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.Header__link {
+  margin-right: 1rem;
+}
+
+.Header__routerLink {
+  display: block;
 }

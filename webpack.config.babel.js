@@ -28,7 +28,10 @@ module.exports = {
     moment: 'moment',
     immutable: 'Immutable',
     react: 'React',
-    'react-dom': 'ReactDOM'
+    'react-dom': 'ReactDOM',
+    'react-redux': 'ReactRedux',
+    'react-router': 'ReactRouter',
+    redux: 'Redux'
   } : null,
   module: {
     loaders: [
@@ -60,11 +63,12 @@ module.exports = {
       chunksSortMode: 'none',
       vendors: [
         `//cdnjs.cloudflare.com/ajax/libs/moment.js/${versions.moment}/moment-with-locales.min.js`,
+        `//cdnjs.cloudflare.com/ajax/libs/immutable/${versions.immutable}/immutable.min.js`,
         `//cdnjs.cloudflare.com/ajax/libs/react/${versions.react}/react.min.js`,
         `//cdnjs.cloudflare.com/ajax/libs/react/${versions['react-dom']}/react-dom.min.js`,
         `//cdnjs.cloudflare.com/ajax/libs/redux/${versions.redux}/redux.min.js`,
         `//cdnjs.cloudflare.com/ajax/libs/react-redux/${versions['react-redux']}/react-redux.min.js`,
-        `//cdnjs.cloudflare.com/ajax/libs/immutable/${versions.immutable}/immutable.min.js`
+        `//cdnjs.cloudflare.com/ajax/libs/react-router/${versions['react-router']}/ReactRouter.min.js`
       ].filter(() => prod).map((url) => `<script src="${url}"></script>`).join('\n  '),
       devTools: dev ? '<div id="$$DevTools"></div>' : '',
       minify: prod ? {
@@ -96,5 +100,8 @@ module.exports = {
       compress: { warnings: false },
       mangle: { except: [] }
     })
-  ].filter(() => prod))
+  ].filter(() => prod)),
+  devServer: {
+    historyApiFallback: true
+  }
 };

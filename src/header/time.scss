@@ -1,0 +1,12 @@
+.Time {
+  display: flex;
+  align-items: center;
+}
+
+.Time__icon, .Time__now {
+  display: inline-block;
+}
+
+.Time__now {
+  padding-left: 0.5rem;
+}

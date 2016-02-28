@@ -1,3 +1,5 @@
+import './time.scss';
+import FontIcon from 'material-ui/lib/font-icon';
 import moment from 'moment';
 import React, { Component } from 'react';
 
@@ -36,7 +38,10 @@ export default class Header extends Component {
 
   render() {
     return (
-      <span className="Time">{ this.state.time }</span>
+      <span className="Time">
+        <FontIcon className="Time__icon material-icons">access_time</FontIcon>
+        <span className="Time__now">{ this.state.time }</span>
+      </span>
     );
   }
 }
