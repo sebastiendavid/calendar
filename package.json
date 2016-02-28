@@ -29,6 +29,7 @@
     "eslint-plugin-react": "^4.1.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.9.0",
+    "immutable": "^3.7.6",
     "moment": "^2.11.2",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.8.1",
@@ -41,6 +42,8 @@
     "redux-devtools-dock-monitor": "^1.1.0",
     "redux-devtools-log-monitor": "^1.0.4",
     "redux-slider-monitor": "^1.0.2",
+    "redux-storage": "^3.0.0",
+    "redux-storage-engine-localstorage": "^1.0.0",
     "redux-thunk": "^1.0.3",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
@@ -73,7 +76,8 @@
         120,
         2
       ],
-      "no-console": 0
+      "no-console": 0,
+      "new-cap": 0
     }
   }
 }

@@ -1,0 +1,16 @@
+.Header {
+  display: flex;
+  font-size: 2rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.Header__date {
+  flex-grow: 2;
+}
+
+.Time {
+  display: inline-block;
+  flex-grow: 1;
+  text-align: right;
+}

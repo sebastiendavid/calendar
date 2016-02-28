@@ -26,6 +26,7 @@ module.exports = {
   },
   externals: prod ? {
     moment: 'moment',
+    immutable: 'Immutable',
     react: 'React',
     'react-dom': 'ReactDOM'
   } : null,
@@ -62,7 +63,8 @@ module.exports = {
         `//cdnjs.cloudflare.com/ajax/libs/react/${versions.react}/react.min.js`,
         `//cdnjs.cloudflare.com/ajax/libs/react/${versions['react-dom']}/react-dom.min.js`,
         `//cdnjs.cloudflare.com/ajax/libs/redux/${versions.redux}/redux.min.js`,
-        `//cdnjs.cloudflare.com/ajax/libs/react-redux/${versions['react-redux']}/react-redux.min.js`
+        `//cdnjs.cloudflare.com/ajax/libs/react-redux/${versions['react-redux']}/react-redux.min.js`,
+        `//cdnjs.cloudflare.com/ajax/libs/immutable/${versions.immutable}/immutable.min.js`
       ].filter(() => prod).map((url) => `<script src="${url}"></script>`).join('\n  '),
       devTools: dev ? '<div id="$$DevTools"></div>' : '',
       minify: prod ? {
