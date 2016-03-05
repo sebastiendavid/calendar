@@ -1,0 +1,26 @@
+.WeekDay {
+  flex-grow: 1;
+  min-height: 1rem;
+  min-width: 0;
+
+  & + & {
+    border-left: 1px solid black;
+  }
+}
+
+.WeekDay__header {
+  display: flex;
+  padding: 1rem;
+}
+
+.WeekDay__name, .WeekDay__num {
+  flex-grow: 1;
+}
+
+.WeekDay__name {
+  text-align: left;
+}
+
+.WeekDay__num {
+  text-align: right;
+}

@@ -1,3 +1,4 @@
+import './layout.scss';
 import React, { Component, PropTypes } from 'react';
 import Header from 'calendar/header';
 
@@ -11,7 +12,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Layout">
         <Header />
         {this.props.children}
       </div>

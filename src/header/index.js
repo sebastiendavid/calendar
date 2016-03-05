@@ -10,7 +10,7 @@ import Time from 'calendar/header/time';
 export default class Header extends Component {
   render() {
     return (
-      <header className="Header">
+      <header className="Header Layout__header">
         <div className="Header__info">
           <div className="Header__date">
             <FontIcon className="Header__icon material-icons">date_range</FontIcon>
