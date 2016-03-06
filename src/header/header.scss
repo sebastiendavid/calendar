@@ -1,14 +1,14 @@
+.Header {
+  display: flex;
+  align-items: center;
+}
+
 .Header__info {
   display: flex;
+  flex-grow: 1;
   font-size: 2rem;
   padding: 1rem;
   align-items: center;
-
-  .Time {
-    flex-grow: 1;
-    text-align: right;
-    justify-content: flex-end;
-  }
 
   .material-icons {
     font-size: 2rem !important;
@@ -27,13 +27,22 @@
 
 .Header__navbar {
   display: flex;
-  padding: 0 1rem 1rem 1rem;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
 }
 
 .Header__link {
-  margin-right: 1rem;
+  margin-left: 1rem;
+
+  &--nav {
+    &:last-child {
+      margin-left: 0.5rem;
+    }
+  }
 }
 
 .Header__routerLink {
-  display: block;
+  display: inline-block;
 }

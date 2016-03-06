@@ -1,21 +1,21 @@
 import './week.scss';
+import { connect } from 'react-redux';
 import moment from 'moment';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Day from 'calendar/views/week/weekDay';
 
-export default class Week extends Component {
+class Week extends Component {
+  static propTypes = {
+    week: PropTypes.string.isRequired
+  };
+
   constructor(args) {
     super(args);
-    const week = this.processWeek();
-    this.state = {
-      startOfWeek: week[0],
-      endOfWeek: week[6],
-      week
-    };
     this.renderDay = this.renderDay.bind(this);
   }
 
-  processWeek(date = moment().startOf('week')) {
+  processWeek() {
+    const date = moment(this.props.week);
     const week = [];
     for (let n = 0; n < 7; n++) {
       week.push(date.clone().add(n, 'days'));
@@ -30,14 +30,19 @@ export default class Week extends Component {
   }
 
   render() {
-    const { endOfWeek, startOfWeek, week } = this.state;
     return (
       <section className="Week Layout__content">
-        <header className="Week__header">{startOfWeek.format('LL')} - {endOfWeek.format('LL')}</header>
         <ul className="Week__days">
-          {week.map(this.renderDay)}
+          {this.processWeek().map(this.renderDay)}
         </ul>
       </section>
     );
   }
 }
+
+export default connect((state) => {
+  const { views } = state;
+  return {
+    week: views.get('week')
+  };
+})(Week);
